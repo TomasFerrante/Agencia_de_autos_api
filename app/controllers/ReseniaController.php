@@ -52,4 +52,23 @@
       $review = $this->model->getReview($id);
       $this->view->response($review, 200);
     }
+
+    public function createReview($req,$res) {
+      if (empty($req->body->Titulo) || empty($req->body->Comentario) || empty($req->body->Valoracion)) {
+        return $this->view->response("Faltan completar datos obligatorios", 400);
+      }
+
+      $titulo = $req->body->Titulo;
+      $comentario = $req->body->Comentario;
+      $valoracion = $req->body->Valoracion;
+
+      $id = $this->model->insertReview($titulo,$comentario,$valoracion);
+
+      if (!$id) {
+        return $this->view->response("Error al crear reseña", 500);
+      }
+
+      $resenia = $this->model->getReview($id);
+      return $this->view->response($resenia, 201);
+    }
   }

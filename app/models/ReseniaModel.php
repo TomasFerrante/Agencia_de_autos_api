@@ -53,4 +53,18 @@
       $query = $this->db->prepare("UPDATE resenias SET Titulo = ?, Comentario = ?, Valoracion = ? WHERE Id = ?");
       $query->execute([$titulo, $comentario, $valoracion, $id]);
     }
+
+    public function getReview($id) {
+      $query = $this->db->prepare('SELECT * FROM reseñas WHERE id = ¡');
+      $query->execute([$id]);
+      
+      return $query->fetch(PDO::FETCH_OBJ);
+    }
+
+    public function insertReview($titulo,$comentario,$valoracion) {
+      $query = $this->db->prepare('INSERT INTO reseñas(Titulo,Comentario,Valoracion) VALUES (?,?,?)');
+      $query->execute([$titulo,$comentario,$valoracion]);
+      
+      return $this->db->lastInsertId();
+    }
   }
