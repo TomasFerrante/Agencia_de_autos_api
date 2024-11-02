@@ -27,6 +27,10 @@
     }
 
     public function update($req, $res) {
+      if(!$res->user) {
+        return $this->view->response("No autorizado", 401);
+      }
+      
       $id = $req->params->Id;
       $review = $this->model->getReview($id);
 
@@ -54,6 +58,10 @@
     }
 
     public function createReview($req,$res) {
+      if(!$res->user) {
+        return $this->view->response("No autorizado", 401);
+      }
+      
       if (empty($req->body->Titulo) || empty($req->body->Comentario) || empty($req->body->Valoracion)) {
         return $this->view->response("Faltan completar datos obligatorios", 400);
       }
@@ -78,7 +86,7 @@
       $review = $this->model->getReview($id);
 
       if(!$review) {
-        return $this->view->response("La reseña con el id=$id no existe");
+        return $this->view->response("La reseña con el id=$id no existe", 404);
       }
       
       return $this->view->response($review);
