@@ -55,7 +55,7 @@
     }
 
     public function getReview($id) {
-      $query = $this->db->prepare('SELECT * FROM reseñas WHERE id = ¡');
+      $query = $this->db->prepare('SELECT * FROM reseñas WHERE id = ?');
       $query->execute([$id]);
       
       return $query->fetch(PDO::FETCH_OBJ);
