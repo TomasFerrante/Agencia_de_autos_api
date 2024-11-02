@@ -71,4 +71,16 @@
       $resenia = $this->model->getReview($id);
       return $this->view->response($resenia, 201);
     }
+
+    public function getReview($req,$res) {
+      $id = $req->params->id;
+
+      $review = $this->model->getReview($id);
+
+      if(!$review) {
+        return $this->view->response("La reseña con el id=$id no existe");
+      }
+      
+      return $this->view->response($review);
+    }
   }
