@@ -68,7 +68,11 @@
 
       $titulo = $req->body->Titulo;
       $comentario = $req->body->Comentario;
-      $valoracion = $req->body->Valoracion;
+      if ($req->body->Valoracion >= 1 && $req->body->Valoracion <= 5) {
+        $valoracion = $req->body->Valoracion;
+      } else {
+        $this->view->response("La valoración es inválida", 400);
+      }
 
       $id = $this->model->insertReview($titulo,$comentario,$valoracion);
 
