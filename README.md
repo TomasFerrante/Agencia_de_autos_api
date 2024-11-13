@@ -1,12 +1,36 @@
 
 # Agencia de autos - API REST
 
+
 ## Integrantes
 
 - Ferrante, Tomas Abel (44048410)
 - Denot, Mayra Andrea (45539846)
 
+
 ## Documentación API - Endpoints
+
+
+## Autenticación
+La autenticación utilizada es JWT.
+
+Pasos a seguir:  
+
+- Primero se debe obtener el token con Basic Auth a través de:
+
+```http
+  GET http://localhost/agencia-autos-api/api/usuarios/token
+```
+
+- Luego ingrese los siguientes datos:
+    - Usuario: webadmin
+    - Contraseña: admin
+**Nos devuelve nuestro token.**
+
+Luego en los métodos que requieran de una autorización elegimos el Bearer Auth, ingresando el token que nos brindó el Basic.
+```
+    Authorization: Bearer <mi_token>
+```
 
 #### BASE URL
 
@@ -179,12 +203,6 @@ Actualiza o modifica una reseña existente. **Requiere autorización.**
     }
 ```
 
-#### GET TOKEN
-
-```http
-  GET http://localhost/agencia-autos-api/api/usuarios/token
-```
-
 ### Posibles Códigos de Respuesta en la API
 - 200 OK - Reseña obtenida/actualizada correctamente.
 - 201 Created - Reseña creada correctamente.
@@ -192,8 +210,3 @@ Actualiza o modifica una reseña existente. **Requiere autorización.**
 - 401 Unauthorized - El token de autorización es inválido o no fue enviado.
 - 404 Not Found - La reseña con el ID especificado no existe.
 - 500 Internal Server Error - Error del servidor al obtener/crear/actualizar la reseña.
-
-
-
-
-

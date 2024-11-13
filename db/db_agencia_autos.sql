@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-11-2024 a las 21:12:37
+-- Tiempo de generación: 13-11-2024 a las 03:51:37
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -64,7 +64,9 @@ CREATE TABLE `reseñas` (
 
 INSERT INTO `reseñas` (`Id`, `Titulo`, `Comentario`, `Valoracion`) VALUES
 (1, 'Muy buen auto!!!!', 'El Toyota Corolla 2017 que alquilé estaba impecable, con una pintura brillante y un interior bien cuidado, casi como si fuera nuevo. Su diseño sencillo pero elegante lo hace lucir moderno', 4),
-(3, 'Muy accesible y cómodo', 'El Fiat Cronos 2022 tiene un aspecto moderno y atractivo, con líneas bien definidas y un toque deportivo que llama la atención. Aunque su precio es accesible, algunos acabados interiores podrían ser de mejor calidad', 3);
+(3, 'Testing 2', 'Testeo del put', 2),
+(5, 'Nuevo Titulo Editado', 'Nuevo Comentario Editado', 5),
+(6, 'Testeo', 'Creando reseña nueva', 3);
 
 -- --------------------------------------------------------
 
@@ -141,7 +143,7 @@ ALTER TABLE `alquileres`
 -- AUTO_INCREMENT de la tabla `reseñas`
 --
 ALTER TABLE `reseñas`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -37,7 +37,7 @@ class UsuarioController {
             'usuario' => $user->Usuario,
             'role' => 'admin',
             'iat' => time(),
-            'exp' => time() + 120,
+            'exp' => time() + 300,
         ));
 
         return $this->view->response($token);
