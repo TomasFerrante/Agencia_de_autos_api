@@ -31,7 +31,7 @@
         return $this->view->response("No autorizado", 401);
       }
       
-      $id = $req->params->Id;
+      $id = $req->params->id;
       $review = $this->model->getReview($id);
 
       if (!$review) {

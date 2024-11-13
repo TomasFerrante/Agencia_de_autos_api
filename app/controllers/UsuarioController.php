@@ -33,7 +33,7 @@ class UsuarioController {
         }
 
         $token = createJWT(array(
-            'sub' => $user->Id,
+            'sub' => $user->ID_Usuario,
             'usuario' => $user->Usuario,
             'role' => 'admin',
             'iat' => time(),

@@ -13,6 +13,10 @@ function createJWT($payload) {
     $signature = hash_hmac('sha256', $header . "." . $payload, JWT_SECRET, true);
     $signature = base64_encode($signature);
     $signature = str_replace(['+', '/', '='], ['-', '_', ''], $signature);
+
+    $jwt = $header . "." . $payload . "." . $signature;
+    return $jwt;
+
 }
 
 function validateJWT($jwt) {

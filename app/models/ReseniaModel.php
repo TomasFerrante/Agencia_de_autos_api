@@ -50,7 +50,7 @@
     }
 
     public function updateReview($id, $titulo, $comentario, $valoracion) {
-      $query = $this->db->prepare("UPDATE resenias SET Titulo = ?, Comentario = ?, Valoracion = ? WHERE Id = ?");
+      $query = $this->db->prepare("UPDATE reseñas SET Titulo = ?, Comentario = ?, Valoracion = ? WHERE Id = ?");
       $query->execute([$titulo, $comentario, $valoracion, $id]);
     }
 
