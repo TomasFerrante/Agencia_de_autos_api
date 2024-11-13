@@ -31,13 +31,13 @@
 
       if ($orderBy) {
         switch($orderBy) {
-          case "titulo":
+          case "Titulo":
             $sql .= " ORDER BY Titulo";
           break;
-          case "comentario";
+          case "Comentario";
             $sql .= " ORDER BY Comentario";
           break;
-          case "valoracion";
+          case "Valoracion";
             $sql .= " ORDER BY Valoracion";
           break;
         }

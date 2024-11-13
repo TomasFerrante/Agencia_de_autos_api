@@ -47,14 +47,11 @@ Luego en los métodos que requieran de una autorización elegimos el Bearer Auth
 Devuelve una lista de reseñas disponibles en el sistema. Se pueden incluir filtros opcionales para obtener reseñas específicas y ordenarlas por cualquiera de sus campos de manera ascendente.
 
 #### Parámetros de consulta opcionales:
-- **Campo de la tabla** (opcional) - Filtra las reseñas por el campo y valor, indicados por el usuario. 
+- **Valoracion** (opcional) - Filtra las reseñas por la valoración que le indique el usuario. 
 
-    #### Ejemplos de solicitudes:
+    #### Ejemplo de solicitud:
     ```http
         GET http://localhost/agencia-autos-api/api/reseñas?Valoracion=3
-    ```
-    ```http
-        GET http://localhost/agencia-autos-api/api/reseñas?Titulo="Muy buen auto!!!!"
     ```
 - **orderBy** (opcional) - Ordena las reseñas por el campo indicado.
 
