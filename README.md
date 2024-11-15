@@ -163,7 +163,7 @@ Añade una reseña al sistema. **Requiere autorización.**
             "comentario": "Lo recomendaría sin dudarlo.",
             "created_at": "2023-11-12T12:45:00Z"
         }
-    }
+    ]
 ```
 
 #### PUT RESEÑA
