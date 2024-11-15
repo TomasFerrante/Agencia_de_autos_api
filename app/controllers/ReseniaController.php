@@ -18,11 +18,15 @@
       }
       
       $orderBy = false;
+      $orderMode = null;
       if (isset($req->query->orderBy)) {
         $orderBy = $req->query->orderBy;
+        if (isset($req->query->orderMode)) {
+          $orderMode = $req->query->orderMode;
+        }
       }
 
-      $reviews = $this->model->getAll($filtrarValoracion, $orderBy);
+      $reviews = $this->model->getAll($filtrarValoracion, $orderBy, $orderMode);
       return $this->view->response($reviews);
     }
 

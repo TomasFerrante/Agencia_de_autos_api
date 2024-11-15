@@ -6,7 +6,7 @@
       $this->db = new PDO('mysql:host=localhost;dbname=db_agencia_autos;charset=utf8', 'root', '');
     }
 
-    public function getAll($filtrarValoracion = null, $orderBy = false) {
+    public function getAll($filtrarValoracion = null, $orderBy = false, $orderMode) {
       $sql = "SELECT * FROM reseñas";
 
       if ($filtrarValoracion != null) {
@@ -40,6 +40,11 @@
           case "Valoracion";
             $sql .= " ORDER BY Valoracion";
           break;
+        }
+        if (isset($orderMode) && $orderMode == "DESC") {
+          $sql .= " DESC";
+        } else {
+          $sql .= " ASC";
         }
       }
 
